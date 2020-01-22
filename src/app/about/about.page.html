@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-button color="primary" (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title>A propos</ion-title>
   </ion-toolbar>
@@ -12,7 +14,7 @@
     <ion-item>
       <ion-label>
         <h2>Application :</h2>
-        <p>MeteoW</p>
+        <p>Meteo</p>
       </ion-label>
     </ion-item>
     <ion-item>

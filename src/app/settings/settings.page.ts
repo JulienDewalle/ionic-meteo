@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-settings',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsPage implements OnInit {
 
-  constructor() { }
+  city = 'Hulluch';
+  constructor(private storage: Storage) { }
 
   ngOnInit() {
+    this.storage.get('city').then(city => {
+      if (null !== city) {
+        this.city = city;
+      }
+    });
   }
 
+  save () {
+    this.storage.set('city', this.city);
+  }
 }

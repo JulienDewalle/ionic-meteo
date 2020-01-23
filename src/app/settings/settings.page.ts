@@ -12,14 +12,14 @@ export class SettingsPage implements OnInit {
   constructor(private storage: Storage) { }
 
   ngOnInit() {
+    //on recupere la Ville dans la bdd
     this.storage.get('city').then(city => {
-      if (null !== city) {
-        this.city = city;
-      }
+      if (null !== city) this.city = city;  
     });
   }
 
   save () {
+    //on enregistre la ville
     this.storage.set('city', this.city);
   }
 }
